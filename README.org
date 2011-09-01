@@ -1,4 +1,4 @@
-* Swank Clojure
+* Swank Lua
 
 [[http://github.com/matsu911/swank-lua][Swank Lua]] is a server that allows [[http://common-lisp.net/project/slime/][SLIME]] (the Superior Lisp Interaction Mode for Emacs) to connect to Lua projects.
 

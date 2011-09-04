@@ -285,6 +285,10 @@ function swank.autodoc(self, args, serial)
    return return_ok_message(":not-available", serial), {}
 end
 
+function swank.interactive_eval_region(self, args, serial)
+   return swank.eval(self, args[1], serial, false)
+end
+
 function swank.result_message(self, serial, status, ret, print_messages, is_listener)
    local write_str = {}
    if status then
@@ -321,7 +325,7 @@ local dispatcher = {
    ['swank:buffer-first-change']     = swank.buffer_first_change,
    ['swank:autodoc']                 = swank.autodoc,
    ['swank:completions']             = swank.completions,
-   ['swank:interactive-eval-region'] = function (self, x, y) return swank.eval(self, x, y, false) end,
+   ['swank:interactive-eval-region'] = swank.interactive_eval_region,
    ['swank:listener-eval']           = swank.listener_eval,
    ['swank:load-file']               = swank.load_file,
 }
